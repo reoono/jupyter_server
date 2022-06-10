@@ -706,6 +706,7 @@ class APIHandler(JupyterHandler):
 
     async def prepare(self):
         await super().prepare()
+        self.xsrf_token
         if not self.check_origin():
             raise web.HTTPError(404)
 
