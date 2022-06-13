@@ -106,7 +106,7 @@ class LoginHandler(JupyterHandler):
             cookie_options.setdefault("secure", True)
         cookie_options.setdefault("path", handler.base_url)
         handler.set_secure_cookie(handler.cookie_name, user_id, **cookie_options)
-        # To set XSRF token at login
+        # To set _xsrf cookie at login
         handler.xsrf_token
         return user_id
 
