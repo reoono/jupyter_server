@@ -133,6 +133,7 @@ class AuthenticatedHandler(web.RequestHandler):
             # N.B. This bypasses the normal cookie handling, which can't update
             # two cookies with the same name. See the method above.
             self.force_clear_cookie(self.cookie_name)
+        self.clear_cookie("_xsrf")
 
     def get_current_user(self):
         clsname = self.__class__.__name__
